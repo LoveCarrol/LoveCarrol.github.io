@@ -42,18 +42,13 @@
       var hold = 1;
 
       canvas.addEventListener('click', function(e) {
-      x = e.pageX - canvas.offsetLeft;
-      y = e.pageY - canvas.offsetTop;
-      if (seed.hover(x, y)) {
-        hold = 0;
-//        canvas.unbind("click");
-//        canvas.unbind("mousemove");
-//        canvas.removeClass('hand');
-      }
+//      x = e.pageX - canvas.offsetLeft;
+//      y = e.pageY - canvas.offsetTop;
+      hold = 0;
       // full screen
-      screenfull && screenfull.request();
+      //screenfull && screenfull.request();
       // sakura falling
-      $('body').sakura('start', {
+      /*$('body').sakura('start', {
           blowAnimations: [
               'blow-soft-left',
           ],                   // Horizontal movement animation names
@@ -65,7 +60,7 @@
           swayAnimations: [    // Swaying animation names
               'sway-0',
           ]
-      });
+      });*/
       }, false);
 
       var seedAnimate = eval(Jscex.compile("async", function () {
@@ -106,19 +101,17 @@
           }
         foot.draw();
         tree.snapshot("p2", 500, 0, 610, 680);
+        canvas.parentNode.style.background = "url(" + tree.toDataURL('image/png') + ")";
         // 会有闪烁不得意这样做, (＞﹏＜)
-        canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
-        canvas.css("background", "#ffe");
         $await(Jscex.Async.sleep(300));
-        canvas.css("background", "none");
       }));
 
       var textAnimate = eval(Jscex.compile("async", function () {
         var together = new Date();
         together.setFullYear(2016, 5, 20); //时间年月日
-	together.setHours(17); //小时
-	together.setMinutes(20); //分钟
-	together.setSeconds(0); //秒前一位
+        together.setHours(17); //小时
+        together.setMinutes(20); //分钟
+        together.setSeconds(0); //秒前一位
         together.setMilliseconds(2); //秒第二位
         $("#code").show().typewriter();
         $("#clock-box").fadeIn(500);
@@ -139,6 +132,7 @@
       }));
 
       var runAsync = eval(Jscex.compile("async", function () {
+        //console.log("hahah");
         $await(seedAnimate());
         $await(growAnimate());
         $await(flowAnimate());
