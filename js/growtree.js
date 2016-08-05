@@ -1,3 +1,23 @@
+var isFall = true;
+var isFull = true;
+
+if(isFall) {
+// sakura falling
+         $('body').sakura('start', {
+             blowAnimations: [
+                 'blow-soft-left',
+             ],                   // Horizontal movement animation names
+             className: 'sakura', // Class name to use
+             fallSpeed: 1,        // Factor for petal fall speed
+             maxSize: 14,         // Maximum petal size
+             minSize: 9,          // Minimum petal size
+             newOn: 300,          // Interval after which a new petal is added
+             swayAnimations: [    // Swaying animation names
+                 'sway-0',
+             ]
+         });
+}
+
      var canvas = document.getElementById("canvas");
      var width = canvas.width;
      var height = canvas.height;
@@ -44,23 +64,11 @@
      canvas.addEventListener('click', function(e) {
          //      x = e.pageX - canvas.offsetLeft;
          //      y = e.pageY - canvas.offsetTop;
-         hold = 0;
          // full screen
-         //screenfull && screenfull.request();
-         // sakura falling
-         /*$('body').sakura('start', {
-             blowAnimations: [
-                 'blow-soft-left',
-             ],                   // Horizontal movement animation names
-             className: 'sakura', // Class name to use
-             fallSpeed: 1,        // Factor for petal fall speed
-             maxSize: 14,         // Maximum petal size
-             minSize: 9,          // Minimum petal size
-             newOn: 300,          // Interval after which a new petal is added
-             swayAnimations: [    // Swaying animation names
-                 'sway-0',
-             ]
-         });*/
+         if (isFull && screenfull.enabled) {
+             screenfull.request();
+         }
+         hold = 0;
      }, false);
 
      var seedAnimate = eval(Jscex.compile("async", function() {
@@ -108,7 +116,7 @@
 
      var textAnimate = eval(Jscex.compile("async", function() {
          var together = new Date();
-         together.setFullYear(2016, 5, 20); //时间年月日
+         together.setFullYear(2016,4,20); //时间年月日
          together.setHours(17); //小时
          together.setMinutes(20); //分钟
          together.setSeconds(0); //秒前一位

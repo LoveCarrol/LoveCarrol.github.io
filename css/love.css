@@ -1,3 +1,7 @@
+html
+{
+	background: #333;
+}
 body
 {
 	background: #333;
@@ -31,30 +35,34 @@ a
 }
 #code
 {
-    color: #fff;
+        color: #fff;
 	display: none;
-	font-size: 16px;
+	font-size: 24px;
 }
 #clock-box
 {
+        color: #fff;
 	display: none;
-	font-size: 28px;
+	font-size: 24px;
 	left: 60px;
 	position: absolute;
 	top: 550px;
 }
 #clock-box a
 {
-	font-size: 28px;
+        color: #fff;
+	font-size: 16px;
 	text-decoration: none;
 }
 #clock
 {
-	margin-left: 48px;
+        color: #fff;
+	margin-left: 24px;
 }
 #clock .digit
 {
-	font-size: 64px;
+        color: #fff;
+	font-size: 28px;
 }
 #canvas
 {
@@ -64,6 +72,7 @@ a
 }
 #error
 {
+	background: #333;
 	display: none;
 	margin: 0 auto;
 	margin-top: 60px;
