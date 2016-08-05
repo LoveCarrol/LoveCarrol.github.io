@@ -1,6 +1,6 @@
 body
 {
-	background: #ffe;
+	background: #333;
 	color: #231F20;
 	font-family: sans-serif;
 	font-size: 14px;
@@ -31,6 +31,7 @@ a
 }
 #code
 {
+    color: #fff;
 	display: none;
 	font-size: 16px;
 }
