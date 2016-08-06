@@ -9,21 +9,22 @@
 
   <body>
     <div id="main" style="position:absolute; width:600px; height: 300px; left:50%; top:50%; margin-left:-300px; margin-top:-150px">
-      <div id="text" style="display:none; width:600px; height:100px; font-size:48px; color:#eee">
-        <span>Hi, Carrol.</span></br>
+      <div id="text" style="display:none; width:600px; height:200px; font-size:48px; color:#eee">
+        <span>Hey, Carrol.</span></br>
         <span>You got a secert message from yongqi.</span></br>
       </div>
       <div id="message" style="width:600px; height:200px; display:none; font-size:48px; color:#ddd">
         First, open your computer</br> and start chrome browser.</br>
       </div>
-      <div id="control-box">
-        <button class="w3-btn">Next</button>
+      <div id="control-box" style="display:none">
+        <button class="w3-btn" id="btn" style="font-size:48px">Next</button>
       </div>
     </div>
   </body>
 
   <script>
     var box = document.getElementById("control-box");
+    $(box).fadeIn(3000);
     var txt = $("#text");
     txt.fadeIn(3000);
     var msg = $("#message");
