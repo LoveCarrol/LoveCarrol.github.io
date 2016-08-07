@@ -8,6 +8,9 @@
   </head>
 
   <body>
+    <audio id="bgm">
+      <source src="mission impossible.mp3"/>
+    </audio>
     <div id="main" style="position:absolute; width:600px; height: 300px; left:50%; top:50%; margin-left:-300px; margin-top:-150px">
       <div id="text" style="display:none; width:600px; height:200px; font-size:48px; color:#eee">
         <span>Hey, Carrol.</span></br>
@@ -24,13 +27,16 @@
 
   <script>
     var box = document.getElementById("control-box");
-    $(box).fadeIn(3000);
+    var bgm = document.getElementById("bgm")
     var txt = $("#text");
-    txt.fadeIn(3000);
     var msg = $("#message");
     var event = 0;
+
+    $(box).fadeIn(3000);
+    txt.fadeIn(3000);
     box.addEventListener('click', function(e) {
     if(event==0) {
+    bgm.play();
     txt.hide();
     msg.show().typewriter();
     }
@@ -41,8 +47,9 @@
     }
     else if(event==2) {
     msg.hide();
-    msg.text("Now, have some fun...");
+    msg.text("Now, have some fun ...");
     msg.show().typewriter();
+    $(box).fadeOut(1000);
     }
     // update event;
     if(event<=2) {

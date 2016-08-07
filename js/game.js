@@ -754,16 +754,19 @@ function iHeartYou() {
 
     var vtext = document.getElementById("valentines_text");
     vtext.style.display = "block";
-    if (window.location.hash) {
+    if(false) {// (window.location.hash) {
         vtext.textContent = encryptString(decodeURIComponent(window.location.hash).substring(1));
     } else {
-        vtext.textContent = "I love you too, hahaha...";
+        vtext.textContent = "\"There is no remedy for love but to love more.\"";
     }
 
     setTimeout(function() {
         vtext.style.letterSpacing = "3px";
     }, 10);
 
+    setTimeout(function() {
+        $("#canvas_container").fadeOut(10000);
+    }, 2000);
     // After 9 seconds, swipe down to CREDITS.
     // No replay. Fuck it.
     setTimeout(function() {
@@ -808,11 +811,11 @@ function iHeartYou() {
             }
         }, interval);
         console.log("end heart");
-    }, 100);
+    }, 2500);
     setTimeout(function() {
         window.location.href = 'love.html';
         //		document.getElementById("whole_container").style.top = "-200%";
-    }, 8300);
+    }, 10000);
     //	setTimeout(function(){
     //		yourMessage.focus();
     //	},8500);

@@ -3,19 +3,7 @@ var isFull = true;
 
 if(isFall) {
 // sakura falling
-         $('body').sakura('start', {
-             blowAnimations: [
-                 'blow-soft-left',
-             ],                   // Horizontal movement animation names
-             className: 'sakura', // Class name to use
-             fallSpeed: 1,        // Factor for petal fall speed
-             maxSize: 14,         // Maximum petal size
-             minSize: 9,          // Minimum petal size
-             newOn: 300,          // Interval after which a new petal is added
-             swayAnimations: [    // Swaying animation names
-                 'sway-0',
-             ]
-         });
+    $('body').sakura();
 }
 
      var canvas = document.getElementById("canvas");
@@ -69,6 +57,7 @@ if(isFall) {
              screenfull.request();
          }
          hold = 0;
+         $('body').sakura('stop');
      }, false);
 
      var seedAnimate = eval(Jscex.compile("async", function() {
@@ -83,21 +72,21 @@ if(isFall) {
          while (seed.canMove()) {
              seed.move(0, 2);
              foot.draw();
-             $await(Jscex.Async.sleep(10));
+             $await(Jscex.Async.sleep(20));
          }
      }));
 
      var growAnimate = eval(Jscex.compile("async", function() {
          do {
              tree.grow();
-             $await(Jscex.Async.sleep(10));
+             $await(Jscex.Async.sleep(40));
          } while (tree.canGrow());
      }));
 
      var flowAnimate = eval(Jscex.compile("async", function() {
          do {
              tree.flower(2);
-             $await(Jscex.Async.sleep(10));
+             $await(Jscex.Async.sleep(35));
          } while (tree.canFlower());
      }));
 
@@ -105,7 +94,7 @@ if(isFall) {
          tree.snapshot("p1", 240, 0, 610, 680);
          while (tree.move("p1", 500, 0)) {
              foot.draw();
-             $await(Jscex.Async.sleep(10));
+             $await(Jscex.Async.sleep(20));
          }
          foot.draw();
          tree.snapshot("p2", 500, 0, 610, 680);
@@ -122,7 +111,7 @@ if(isFall) {
          together.setSeconds(0); //秒前一位
          together.setMilliseconds(2); //秒第二位
          $("#code").show().typewriter();
-         $("#clock-box").fadeIn(500);
+         $("#clock-box").fadeIn(6000);
          while (true) {
              timeElapse(together);
              $await(Jscex.Async.sleep(1000));
@@ -135,7 +124,7 @@ if(isFall) {
              tree.ctx.clearRect(0, 0, width, height);
              tree.jump();
              foot.draw();
-             $await(Jscex.Async.sleep(25));
+             $await(Jscex.Async.sleep(50));
          }
      }));
 
