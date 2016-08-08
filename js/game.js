@@ -630,7 +630,7 @@ window.onload = function() {
                     var framesLeft = (rewindLevel.frames.length - rewindFrame) + levelObjects[2].frames.length;
                     if (framesLeft < 135) {
                         window.HAS_PLAYED_JAZZ = true;
-                        createjs.Sound.play("jazz");
+                        //createjs.Sound.play("jazz");
                     }
                 }
 

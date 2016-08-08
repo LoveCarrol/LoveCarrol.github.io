@@ -30,20 +30,20 @@ a
 	height: 425px;
 	left: 60px;
 	position: absolute;
-	top: 80px;
-	width: 400px;
+	top: 30px;
+	width: 450px;
 }
 #code
 {
-        color: #fff;
+        color: #FFE4C4;
 	display: none;
-	font-size: 24px;
+	font-size: 20px;
 }
 #clock-box
 {
-        color: #fff;
+        color: #FFFACD;
 	display: none;
-	font-size: 24px;
+	font-size: 20px;
 	left: 60px;
 	position: absolute;
 	top: 550px;
@@ -51,18 +51,21 @@ a
 #clock-box a
 {
         color: #fff;
-	font-size: 16px;
+	font-size: 20px;
 	text-decoration: none;
+}
+#clock-text
+{
 }
 #clock
 {
-        color: #fff;
-	margin-left: 24px;
+        color: #FFFACD;
+	margin-left: 0px;
 }
 #clock .digit
 {
-        color: #fff;
-	font-size: 28px;
+        color: #E9967A;
+	font-size: 24px;
 }
 #canvas
 {

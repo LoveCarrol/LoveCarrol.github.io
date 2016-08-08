@@ -111,7 +111,9 @@ if(isFall) {
          together.setSeconds(0); //秒前一位
          together.setMilliseconds(2); //秒第二位
          $("#code").show().typewriter();
-         $("#clock-box").fadeIn(6000);
+         setTimeout(function() {
+             $("#clock-box").fadeIn(3000);
+         }, 37000);
          while (true) {
              timeElapse(together);
              $await(Jscex.Async.sleep(1000));
