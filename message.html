@@ -27,6 +27,7 @@
 
   <script>
     var box = $("#control-box");
+    var btn = $("#btn");
     var bgm = document.getElementById("bgm");
     var txt = $("#text");
     var msg = $("#message");
@@ -34,7 +35,7 @@
 
     box.fadeIn(3000);
     txt.fadeIn(3000);
-    box.click(function(e) {
+    btn.click(function(e) {
     if(event==0) {
     console.log("0");
     bgm.play();
