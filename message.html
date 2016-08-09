@@ -8,7 +8,7 @@
   </head>
 
   <body>
-    <audio id="bgm">
+    <audio id="bgm" autoplay="autoplay">
       <source src="mission impossible.mp3"/>
     </audio>
     <div id="main" style="position:absolute; width:600px; height: 300px; left:50%; top:50%; margin-left:-300px; margin-top:-150px">
@@ -33,18 +33,18 @@
     var msg = $("#message");
     var event = 0;
 
-    box.fadeIn(3000);
+    //box.fadeIn(3000);
     txt.fadeIn(3000);
     btn.click(function(e) {
     if(event==0) {
     console.log("0");
-    bgm.play();
+    //bgm.play();
     txt.hide();
     msg.show().typewriter();
     }
     else if(event==1) {
     console.log("1");
-    bgm.play();
+    //bgm.play();
     msg.hide();
     msg.text("Next, open the website in Chrome: LoveCarrol.github.io");
     msg.show().typewriter();
@@ -63,9 +63,9 @@
     });
 
     // some browser doesn't work, i have to do this...
-    setTimeout("btn.click()", 10000);
-    setTimeout("btn.click()", 20000);
-    setTimeout("btn.click()", 30000);
+    setTimeout("btn.click()", 8000);
+    setTimeout("btn.click()", 18000);
+    setTimeout("btn.click()", 28000);
     //
   </script>
 </html>
