@@ -26,26 +26,30 @@
   </body>
 
   <script>
-    var box = document.getElementById("control-box");
-    var bgm = document.getElementById("bgm")
+    var box = $("#control-box");
+    var bgm = document.getElementById("bgm");
     var txt = $("#text");
     var msg = $("#message");
     var event = 0;
 
-    $(box).fadeIn(3000);
+    box.fadeIn(3000);
     txt.fadeIn(3000);
-    box.addEventListener('click', function(e) {
+    box.click(function(e) {
     if(event==0) {
+    console.log("0");
     bgm.play();
     txt.hide();
     msg.show().typewriter();
     }
     else if(event==1) {
+    console.log("1");
+    bgm.play();
     msg.hide();
     msg.text("Next, open the website in Chrome: LoveCarrol.github.io");
     msg.show().typewriter();
     }
     else if(event==2) {
+    console.log("2");
     msg.hide();
     msg.text("Now, have some fun ... piupiu");
     msg.show().typewriter();
@@ -55,7 +59,7 @@
     if(event<=2) {
     event = event + 1;
     }
-    }, false);
+    });
 
     //
   </script>
