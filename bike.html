@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>ofobicycle</title>
+    <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+  </head>
+
+  <body>
+    <div id="main" style="position:absolute; width:800px; height: 400px; left:50%; top:50%; margin-left:-400px; margin-top:-200px">
+      <div id="search" style="font-size:24px">
+        Input number: <input id="str" type="search" name="search_name" style="font-size:24px"/>
+        <button class="w3-btn" id="btn" style="font-size:24px">search</button>
+      </div>
+      <div id="result" style="font-size:24px">
+
+      </div>
+    </div>
+
+  </body>
+
+  <script>
+    var str = $("#str");
+    var btn = $("#btn");
+    var res = $("#result")
+    btn.click(function(e) {
+      $.get("bike.txt", function(data) {
+        var lines = data.split("\n");
+        for (var i = 0, len = lines.length; i < len; i++) {
+          line = lines[i];
+          if (line.indexOf(str.val()) == 0) {
+            //alert(line);
+            res.text(line);
+            break;
+          }
+        }
+      }, "text");
+    });
+  </script>
+
+</html>
+<!-- -->
